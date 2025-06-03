@@ -1,0 +1,12 @@
+$(eval
+  o=$(urlfetch json https://raw.githubusercontent.com/nickbrick/ycarcomed-chat-commands/refs/heads/main/phobia/data.json); 
+  function choose(arr){return arr[Math.floor(Math.random() * arr.length)]}; 
+  rng = Math.random();
+  a = choose(o.a);
+  s = choose(o.s);
+  v = choose(o.v);
+  if (rng < 0.7){a.n="";a.d=""};
+  if (rng < 0.1){v.n="";v.d=""};
+  r = s.n+v.n+a.n+"phobia: The fear of "+[v.d, s.d, a.d].join(" ");
+  r[0].toUpperCase()+r.slice(1).replace("  "," ").trim()
+)
