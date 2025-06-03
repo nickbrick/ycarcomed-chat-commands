@@ -1,0 +1,4 @@
+$(eval
+  o=$(urlfetch json https://github.com/nickbrick/ycarcomed-chat-commands/raw/refs/heads/main/district/data.json);
+  `The ${o.buildings[Math.floor(Math.random() * o.buildings.length)]} District and ${o.leaders[Math.floor(Math.random() * o.leaders.length)]} Park`
+)
