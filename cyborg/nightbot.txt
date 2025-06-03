@@ -1,0 +1,21 @@
+$(eval 
+    function cyborg(n){
+        let recipe = o[n.length];
+        let res = '';let i = 0;
+        recipe.forEach(x => {
+            if (x===",") res += x;
+            else if (x==="and") res +=" "+ x;
+            else res += " " + o[n[i++]][x];
+        });
+        return res;
+    };
+    
+    o=$(urlfetch json https://raw.githubusercontent.com/nickbrick/ycarcomed-chat-commands/refs/heads/main/cyborg/data.json); 
+    let q = '$(query)'.length != 0 ? '$(query)' : '$(user)';
+    q = q.toLowerCase().replace(/[^a-z]/g,'');
+    if (q.length < 2 || q.length > 10){
+        ('$(query)' == '') ? o['error'][0] : o['error'][1];
+    }
+    else
+       `${q.toUpperCase()}: ${cyborg(q)}`;
+)
