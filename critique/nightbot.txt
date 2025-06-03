@@ -1,0 +1,4 @@
+$(eval o=$(urlfetch json https://raw.githubusercontent.com/nickbrick/ycarcomed-chat-commands/refs/heads/main/critique/data.json); 
+function choose(arr){return arr[Math.floor(Math.random() * arr.length)]}; 
+[choose(o.a),choose(o.b),choose(o.c),choose(o.d),choose(o.e)].join(" ")
+)
